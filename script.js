@@ -1,4 +1,3 @@
-//variables
 const body = document.querySelector("body");
 const win = document.getElementById("win");
 const draw = document.getElementById("draw");
