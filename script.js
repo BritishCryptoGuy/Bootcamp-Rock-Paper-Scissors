@@ -32,18 +32,23 @@ for (let x = 1; x < 11; x++) {
     alert(`Attempt ${x}, You Lose`);
     numLosses++;
   }
-}
-alert(`Wins:${numWins} Losses: ${numLosses} Draws: ${numDraws}`);
+  alert(`Wins:${numWins} Losses: ${numLosses} Draws: ${numDraws}`);
+  let contPlaying = confirm("Would you like to continue playing?");
 
-if (attempts === 10 && numWins > numLosses && numWins > numDraws) {
+  if (!contPlaying) {
+    break;
+  }
+}
+
+if (numWins > numLosses && numWins > numDraws) {
   body.style.backgroundColor = "green";
   win.classList.toggle("hidden");
   win.classList.add("display-center");
-} else if (attempts === 10 && numDraws > numLosses && numDraws > numWins) {
+} else if (numDraws > numLosses && numDraws > numWins) {
   body.style.backgroundColor = "orange";
   draw.classList.toggle("hidden");
   draw.classList.add("display-center");
-} else if (attempts === 10 && numLosses > numWins && numLosses > numDraws) {
+} else if (numLosses > numWins && numLosses > numDraws) {
   body.style.backgroundColor = "red";
   loss.classList.toggle("hidden");
   loss.classList.add("display-center");
